@@ -1,0 +1,60 @@
+<!-- 发现页面 -->
+<input class="search" placeholder="搜索" placeholder-style="color: #B6B6B6"></input>
+<view class="container">
+  <view class="title">
+    <view class="type">科幻类</view>
+    <view class="more">更多 ></view>
+  </view>
+  <view class="scroll-box">
+    <view class="box">
+      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+      <view class="book-name">三体</view>
+    </view>
+    <view class="box">
+      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+      <view class="book-name">三体</view>
+    </view>
+    <view class="box">
+      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+      <view class="book-name">三体</view>
+    </view>
+    <view class="box">
+      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+      <view class="book-name">三体</view>
+    </view>
+    <view class="box">
+      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+      <view class="book-name">三体</view>
+    </view>
+  </view>
+</view>
+
+<view class="container">
+  <view class="title">
+    <view class="type">科幻类</view>
+    <view class="more">更多 ></view>
+  </view>
+  <view class="scroll-box">
+    <view class="box">
+      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+      <view class="book-name">三体</view>
+    </view>
+    <view class="box">
+      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+      <view class="book-name">三体</view>
+    </view>
+    <view class="box">
+      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+      <view class="book-name">三体</view>
+    </view>
+    <view class="box">
+      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+      <view class="book-name">三体</view>
+    </view>
+    <view class="box">
+      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+      <view class="book-name">三体</view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,66 @@
+/**index.wxss**/
+page {
+  background-color: #f4f5f7;
+}
+.head {
+ background: #fff;
+ overflow: hidden;
+}
+.head-tag {
+  width: 50%;
+  font-size: 14px;
+  text-align:center;
+  position: relative;
+  float: left;
+  line-height: 2rem;
+}
+.head-tag::before {
+  content: "";
+  border-right: 1px solid #B6B6B6;
+  height: 1rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.head-tag:last-child::before {
+  border:none;
+}
+.head-tag::after {
+  content: "";
+  border-bottom: 3px solid #F2F2F2;
+  width: 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.count {
+  font-size: 12px;
+  line-height: 1.8rem;
+  padding-left: 0.8rem;
+  color: #B6B6B6;
+}
+.book-box {
+  background: #fff;
+  padding: 0.6rem;
+  overflow: hidden;
+  border-bottom: 1px solid #F2F2F2;
+}
+.book-img {
+  width: 4rem;
+  height: 5rem;
+  float: left;
+}
+.book-introduce {
+  float: left;
+  padding-left: 0.4rem;
+  color: #8B8B8B;
+  font-size: 12px;
+  line-height: 1.2rem;
+}
+.book-name {
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}

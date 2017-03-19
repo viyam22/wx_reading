@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/bookrack/bookrack",
+    "pages/more/more",
+    "pages/explore/explore",
+    "pages/myData/myData",
+    "pages/logs/logs",
+    "pages/test/test",
+    "pages/social/social"
+  ],
+  "window": {
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "读书记录小程序",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+        "list": [{
+            "pagePath": "pages/explore/explore",
+            "text": "发现",
+            "iconPath": "/static/explore.png",
+            "selectedIconPath": "/static/explore_blue.png"
+        },{
+            "pagePath": "pages/bookrack/bookrack",
+            "text": "书架",
+            "iconPath": "/static/bookrack.png",
+            "selectedIconPath": "/static/bookrack_blue.png"
+        },{
+            "pagePath": "pages/test/test",
+            "text": "书圈",
+            "iconPath": "/static/fri.png",
+            "selectedIconPath": "/static/fri_blue.png"
+        },{
+            "pagePath": "pages/myData/myData",
+            "text": "我的",
+            "iconPath": "/static/my.png",
+            "selectedIconPath": "/static/my_blue.png"
+        }],
+        "color": "black",
+        "selectedColor": "#1689ef",
+        "backgroundColor": "white",
+        "borderStyle": "white"
+  }
+}

@@ -1,0 +1,62 @@
+page {
+  background-color: #f4f5f7;
+}
+.search {
+  margin: 0.4rem;
+  background: #fff;
+  border-radius: 0.4rem;
+  font-size: 12px;
+  height: 1.5rem;
+  text-align:center;
+}
+.container {
+  background: #fff;
+  font-size: 14px;
+  overflow: hidden;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+.title {
+  height: 1.6rem;
+  line-height: 1.6rem;
+  padding: 0.4rem 0.8rem;
+  position: relative;
+}
+.type {
+  float: left;
+}
+.type::after {
+  content: "";
+  border-left: 3px solid #1689EF;
+  height: 14px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.more {
+  color: #1689EF;
+  float: right;
+  font-size: 12px;
+}
+.scroll-box {
+  padding-left: 0.8rem;
+  white-space: nowrap;
+  overflow: auto;
+}
+.scroll-box::-webkit-scrollbar {
+  display: none;
+}
+.box {
+  display: inline-block;
+  margin-right: 0.8rem;
+  height: 6rem;
+}
+.book-img {
+  width: 5rem;
+  height: 7rem;
+}
+.book-name {
+  font-size: 12px;
+  font-weight: bold;
+}
