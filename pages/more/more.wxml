@@ -1,0 +1,26 @@
+<!-- 发现页面 -->
+<view class="container">
+  <view class="title">
+    <view class="type">科幻类</view>
+  </view>
+  <view class="box">
+    <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+    <view class="book-name">三体</view>
+  </view>
+  <view class="box">
+    <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+    <view class="book-name">三体</view>
+  </view>
+  <view class="box">
+    <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+    <view class="book-name">三体</view>
+  </view>
+  <view class="box">
+    <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+    <view class="book-name">三体</view>
+  </view>
+  <view class="box">
+    <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+    <view class="book-name">三体</view>
+  </view>
+</view>

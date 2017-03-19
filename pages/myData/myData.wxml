@@ -1,0 +1,15 @@
+<!-- 我的页面 -->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <image class="userinfo-set" src="/static/right.png"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="userstatic">
+    <view class="userstatic-item" wx:for="{{userStatic}}" wx:key="item.name">
+        <image class="userstatic-item-icon" src="{{item.icon}}"></image>
+        <text class="userstatic-item-name">{{item.name}}</text>
+    </view>
+  </view>
+</view>
+

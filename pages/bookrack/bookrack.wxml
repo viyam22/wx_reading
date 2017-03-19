@@ -1,0 +1,25 @@
+<!-- 书架的页面 -->
+<view class="head">
+  <view wx:for="{{tagData}}" wx:key="tagName" class="head-tag {{item.selected}}" bindtap="selectTag" data-index="{{index}}">{{item.name}}</view>
+  <!-- <view class="head-tag" bindtag="selectTag">收藏</view> -->
+</view>
+<view class="count">1本</view>
+<view class="book-box">
+  <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+  <view class="book-introduce">
+    <view class="book-name">张爱玲文集</view>
+    <view>作者：张爱玲</view>
+    <view>出版社：安徽文艺出版社</view>
+  </view>
+</view>
+
+<view class="book-box">
+  <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+  <view class="book-introduce">
+    <view class="book-name">张爱玲文集</view>
+    <view>作者：张爱玲</view>
+    <view>出版社：安徽文艺出版社</view>
+  </view>
+</view>
+
+

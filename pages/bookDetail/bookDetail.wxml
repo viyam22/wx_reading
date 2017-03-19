@@ -1,0 +1,20 @@
+<!-- 图书详情页面 -->
+<view class="book-cover">
+  <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+</view>
+<view class="container">
+  <view class="book-name">小王子</view>
+  <view class="book-info">作者：（法）圣埃克苏佩里</view>
+  <view class="book-info">出版社：中国友谊出版公司</view>
+  <view class="book-info">出版时间：2000-9-1</view>
+
+  <view class="book-box">
+  <view class="book-status">在读</view>
+  <view class="book-status">收藏</view>
+  </view>
+
+  <view class="book-detail">
+    <view class="book-detail-title">简介</view>
+    <view class="book-detail-content">圣埃克苏佩里（1900－1944）1900年，尼采逝世。这一年，安德烈・纪德在布鲁塞尔一次会议上宣称：“当今文学土地的面貌可以说是一片沼泽。”1900年，圣埃克苏佩里诞生。净化沼泽的意愿和能力历史地落在这个“世纪儿”的身上，圣埃克苏佩里是尼采式的第二代法国作家，拿但业的儿子，琐罗亚斯德的孙子，这个飞行员受到极大的遗传影响。</view>
+  </view>
+</view>
