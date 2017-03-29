@@ -52,6 +52,9 @@ page {
   overflow: hidden;
   border-bottom: 1px solid #F2F2F2;
 }
+.temp {
+  overflow: hidden;
+}
 .book-img {
   width: 4rem;
   height: 5rem;
@@ -68,4 +71,11 @@ page {
   font-size: 14px;
   color: #000;
   font-weight: bold;
+}
+.refesh {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-items: center;
+  justify-content: center;
 }

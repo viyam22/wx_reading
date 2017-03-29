@@ -1,0 +1,16 @@
+<view class="search-box">
+  <input class="search" placeholder="搜索好友名字" placeholder-style="color: #B6B6B6" bindinput="bindKeyInput"></input>
+  <view class="search-btn" bindtap="search">搜索</view>
+</view>
+
+<view class="user">
+  <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
+  <view class="user-info">
+    <text>用户名</text>
+    <view class="user-btn" bindtap="search">关注</view>
+  </view>
+</view>
+
+<view class="none-user">
+  该用户不存在！
+</view>

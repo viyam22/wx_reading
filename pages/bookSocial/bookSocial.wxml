@@ -1,0 +1,37 @@
+<view class="search-box">
+  <input class="search" placeholder="搜索好友名字" placeholder-style="color: #B6B6B6" bindinput="bindKeyInput"></input>
+  <view class="search-btn" bindtap="search">搜索</view>
+</view>
+
+<view class="head"><view class="head-title">本月好友排名第<text class="head-count"> 5 </text>名</view></view>
+
+<view class="user">
+  <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
+  <view class="user-info">
+    <view>用户名</view>
+    <view>本月读书<text class="user-count"> 6 </text>天</view>
+  </view>
+</view>
+
+<view class="head"><view class="head-title">排名前三名好友</view></view>
+<view class="user">
+  <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
+  <view class="user-info">
+    <view>用户名</view>
+    <view>本月读书<text class="user-count"> 6 </text>天</view>
+  </view>
+</view>
+<view class="user">
+  <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
+  <view class="user-info">
+    <view>用户名</view>
+    <view>本月读书<text class="user-count"> 6 </text>天</view>
+  </view>
+</view>
+<view class="user">
+  <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
+  <view class="user-info">
+    <view>用户名</view>
+    <view>本月读书<text class="user-count"> 6 </text>天</view>
+  </view>
+</view>

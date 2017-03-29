@@ -1,0 +1,20 @@
+<!-- 我的书评页面 -->
+<view class="count">1本</view>
+<view class="book-box">
+  <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+  <view class="book-introduce" bindtap="toDetail">
+    <view class="book-name">张爱玲文集</view>
+    <view>作者：张爱玲</view>
+    <view>这书很好，很喜欢……</view>
+  </view>
+</view>
+
+<view class="book-box">
+  <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
+  <view class="book-introduce" bindtap="toDetail">
+    <view class="book-name">张爱玲文集</view>
+    <view>这书很好，很喜欢……</view>
+  </view>
+</view>
+
+

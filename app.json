@@ -1,10 +1,16 @@
 {
   "pages": [
-    "pages/bookDetail/bookDetail",
-    "pages/bookrack/bookrack",
-    "pages/more/more",
-    "pages/explore/explore",
     "pages/myData/myData",
+    "pages/addFriend/addFriend",
+    "pages/myFriend/myFriend",
+    "pages/bookSocial/bookSocial",
+    "pages/explore/explore",
+    "pages/calendar/calendar",
+    "pages/searchResult/searchResult",
+    "pages/review/review",
+    "pages/bookrack/bookrack",
+    "pages/bookDetail/bookDetail",
+    "pages/more/more",
     "pages/logs/logs",
     "pages/test/test",
     "pages/social/social"
@@ -27,7 +33,7 @@
             "iconPath": "/static/bookrack.png",
             "selectedIconPath": "/static/bookrack_blue.png"
         },{
-            "pagePath": "pages/test/test",
+            "pagePath": "pages/bookSocial/bookSocial",
             "text": "书圈",
             "iconPath": "/static/fri.png",
             "selectedIconPath": "/static/fri_blue.png"

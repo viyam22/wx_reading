@@ -1,0 +1,33 @@
+/**index.wxss**/
+page {
+  background-color: #f4f5f7;
+}
+.count {
+  font-size: 12px;
+  line-height: 1.8rem;
+  padding-left: 0.8rem;
+  color: #B6B6B6;
+}
+.book-box {
+  background: #fff;
+  padding: 0.6rem;
+  overflow: hidden;
+  border-bottom: 1px solid #F2F2F2;
+}
+.book-img {
+  width: 4rem;
+  height: 5rem;
+  float: left;
+}
+.book-introduce {
+  float: left;
+  padding-left: 0.4rem;
+  color: #8B8B8B;
+  font-size: 12px;
+  line-height: 1.2rem;
+}
+.book-name {
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}

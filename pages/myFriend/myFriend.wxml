@@ -1,0 +1,8 @@
+<view class="user">
+  <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
+  <view class="user-info">
+    <view>用户名</view>
+    <text>本月读书<text class="user-count"> 6 </text>天</text>
+    <view class="user-btn" bindtap="search">取消关注</view>
+  </view>
+</view>

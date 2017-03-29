@@ -37,6 +37,19 @@
   margin: 0.8rem 0.4rem 0 0;
   float: left;
 }
+.book-status-selected {
+  border: 1px solid #1689EF;
+  color: #FFF;
+  background-color: #1689EF;
+  border-radius: 0.2rem;
+  width: 3rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  font-size:14px;
+  text-align:center;
+  margin: 0.8rem 0.4rem 0 0;
+  float: left;
+}
 .book-detail {
   margin-top: 0.8rem;
 }
@@ -46,6 +59,40 @@
   line-height: 28px;
 }
 .book-detail-content {
-  font-size:12px;
+  font-size: 12px;
   line-height: 18px;
 }
+.book-review {
+  margin-top: 0.8rem;
+}
+.book-review-title {
+  color: #1689EF;
+  font-size: 12px;
+  line-height: 28px;
+}
+.book-review-writing {
+  border: 1px solid #F3F3F3;
+}
+.book-review-submit {
+  color: #FFF;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 3px;
+  margin-top: 0.8rem;
+  width: 4rem;
+  background: #1689EF;
+  text-align: center;
+}
+.alert-review {
+  width: 50%;
+  line-height:28px;
+  font-size: 14px;
+  transform: translateX(50%);
+  background: #1689EF; 
+  color: #FFF;
+  text-align: center;
+  position: absolute;
+  bottom: -40%;
+  border-radius: 4px;
+}
+

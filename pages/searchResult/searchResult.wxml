@@ -1,0 +1,15 @@
+<view class="search-box">
+  <input class="search" placeholder="搜索关键字" placeholder-style="color: #B6B6B6" bindinput="bindKeyInput"></input>
+  <view class="search-btn" bindtap="search">搜索</view>
+</view>
+<view class="book-box" wx:for="{{bookData}}" wx:key="item.id">
+  <image class="book-img" src="{{item.image}}" mode="aspectFit" bindtap="toDetail" data-bookdata="{{item}}"></image>
+  <view class="book-introduce">
+    <view class="book-name">{{item.title}}</view>
+    <view>作者：{{item.author}}</view>
+    <view>出版社：{{item.publisher}}</view>
+    <view>价格：{{item.price}}</view>
+  </view>
+</view>
+
+

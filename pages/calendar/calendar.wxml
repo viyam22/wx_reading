@@ -1,0 +1,31 @@
+<view class="head"><view class="head-title">本月第<view class="head-count">5</view>天打卡</view></view>
+<view class="date">2017年4月</view>
+<view class="week-box">
+    <view class="week" wx:for="{{week}}" wx:key="item">{{item}}</view>
+</view>
+<view class="day-box">
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day"><view class="day-record"></view>1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day"><view class="day-record"></view>1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+    <view class="day">1</view>
+</view>
+<view class="footer">
+  <view><view class="footer-logo"></view>未打卡</view>
+</view>
