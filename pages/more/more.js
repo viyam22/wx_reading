@@ -23,7 +23,7 @@ Page({
   getData: function(data) {
     var that = this;
     wx.request({
-      url: app.DB_URL + '/v2/book/search',
+      url: APP.DB_URL + '/v2/book/search',
       data: data,
       header: {
           'content-type': 'application/json'
