@@ -54,7 +54,7 @@ Page({
   },
   search: function() {
     var data= {
-         q: this.data.searchValue ,
+         q: this.data.searchValue,
          tag: '',
          start: '',
          count: 10

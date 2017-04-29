@@ -3,11 +3,11 @@
   <view class="search-btn" bindtap="search">搜索</view>
 </view>
 
-<view class="user">
-  <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
+<view class="user" wx:for="{{userList}}" wx:key="{{item.id}}" wx:for-item="item" hidden="{{userList.length === 0}}">
+  <image class="user-image" src="{{item.imageUrl}}"></image>
   <view class="user-info">
-    <text>用户名</text>
-    <view class="user-btn" bindtap="search">关注</view>
+    <text>{{item.nickName}}</text>
+    <view class="user-btn" bindtap="search" bindtap="follow" data-id="{{item.id}}">关注</view>
   </view>
 </view>
 

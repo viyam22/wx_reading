@@ -1,9 +1,11 @@
 {
   "pages": [
-    "pages/myData/myData",
-    "pages/addFriend/addFriend",
     "pages/myFriend/myFriend",
     "pages/bookSocial/bookSocial",
+    "pages/myData/myData",
+    "pages/addFriend/addFriend",
+    
+    
     "pages/explore/explore",
     "pages/calendar/calendar",
     "pages/searchResult/searchResult",
@@ -43,9 +45,9 @@
             "iconPath": "/static/my.png",
             "selectedIconPath": "/static/my_blue.png"
         }],
-        "color": "black",
+        "color": "#333",
         "selectedColor": "#1689ef",
-        "backgroundColor": "white",
+        "backgroundColor": "#FFF",
         "borderStyle": "white"
   }
 }

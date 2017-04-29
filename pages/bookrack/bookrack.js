@@ -44,17 +44,17 @@ Page({
   toDetail: function(event) {
     let that = this;
     wx.request({
-        url: APP.DB_URL + '/v2/book/isbn/' + event.target.dataset.isbn,
-        header: {
-            'content-type': 'application/json'
-        },
-        success: function({data}) {
-          console.log('根据isbn获得图书信息', data);
-          wx.navigateTo({
-            url: '../bookDetail/bookDetail?data=' + JSON.stringify(data)
-          })
-        }
-      })
+      url: APP.DB_URL + '/v2/book/isbn/' + event.target.dataset.isbn,
+      header: {
+          'content-type': 'application/json'
+      },
+      success: function({data}) {
+        console.log('根据isbn获得图书信息', data);
+        wx.navigateTo({
+          url: '../bookDetail/bookDetail?data=' + JSON.stringify(data)
+        })
+      }
+    })
   },
   getData: function() {
     const that = this;
