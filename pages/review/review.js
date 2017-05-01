@@ -1,28 +1,34 @@
-var APP = getApp()
+var APP = getApp();
+const {Query} = require('../../libs/av-weapp-min.js');
+
 Page({
   data: {
-    tagData: [{
-        name: "在读",
-        selected: 'selected'
-      },{
-        name: "收藏",
-        selected: 'head-tag '
-      }]
+    reviewList: [],
+    reviewCount: '',
   },
-  //事件处理函数
-  selectTag: function(event) {
-    var index = event.target.dataset.index;
-    for(let i = 0, len = this.data.tagData.length; i < len; i++) {
-      this.data.tagData[i].selected = 'head-tag';
-    }
-    this.data.tagData[index].selected = 'selected';
-    this.setData({
-      tagData: this.data.tagData
-    })
+
+  onLoad: function() {
+    var that = this
+    that.getData();
   },
-  toDetail: function() {
-    wx.navigateTo({
-      url: '../bookDetail/bookDetail'
+
+  getData: function() {
+    let that = this,
+        reviewList = [];
+    let reviewQuery = new Query('book_status');
+    reviewQuery.equalTo('userId', APP.globalData.userId);
+
+    reviewQuery.find().then(res => {
+      console.log(res);
+      res.forEach(item => {
+        if (!!item.attributes.review === true){
+          reviewList.push(item.attributes);
+        }
+      })
+      that.setData({
+        reviewList,
+        reviewCount: reviewList.length,
+      });
     })
   }
 })

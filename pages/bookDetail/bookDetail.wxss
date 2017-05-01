@@ -91,8 +91,24 @@
   background: #1689EF; 
   color: #FFF;
   text-align: center;
-  position: absolute;
-  bottom: -40%;
+  position: fixed;
+  top: 50%;
   border-radius: 4px;
 }
-
+.review {
+  font-size: 14px;
+  margin-top: 1.5rem;
+}
+.user-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  margin-right: 0.2rem;
+  transform: translateY(-50%)；
+}
+.user-name {
+  line-height: 1.5rem;
+}
+.user-review {
+  margin-top: 0.4rem;
+}

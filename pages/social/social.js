@@ -39,7 +39,6 @@ Page({
       that.setData({
         userInfo:userInfo
       })
-      console.log(userInfo);
     })
   }
 })

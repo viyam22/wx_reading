@@ -3,35 +3,22 @@
   <view class="search-btn" bindtap="search">搜索</view>
 </view>
 
-<view class="head"><view class="head-title">本月好友排名第<text class="head-count"> 5 </text>名</view></view>
+<view class="head"><view class="head-title">本月好友排名第<text class="head-count"> {{ranking}} </text>名</view></view>
 
 <view class="user">
-  <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
+  <image class="user-image" src="{{userInfo.imageUrl}}"></image>
   <view class="user-info">
-    <view>用户名</view>
-    <view>本月读书<text class="user-count"> 6 </text>天</view>
+    <view>{{userInfo.nickName}}</view>
+    <view>本月读书<text class="user-count"> {{userInfo.count}} </text>天</view>
   </view>
 </view>
 
 <view class="head"><view class="head-title">排名前三名好友</view></view>
-<view class="user">
-  <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
+
+<view class="user" wx:for="{{userInfo.following}}" wx:key="{{item.id}}" hidden="{{index >= 3}}">
+  <image class="user-image" src="{{item.imageUrl}}"></image>
   <view class="user-info">
-    <view>用户名</view>
-    <view>本月读书<text class="user-count"> 6 </text>天</view>
-  </view>
-</view>
-<view class="user">
-  <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
-  <view class="user-info">
-    <view>用户名</view>
-    <view>本月读书<text class="user-count"> 6 </text>天</view>
-  </view>
-</view>
-<view class="user">
-  <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
-  <view class="user-info">
-    <view>用户名</view>
-    <view>本月读书<text class="user-count"> 6 </text>天</view>
+    <view>{{item.nickName}}</view>
+    <view>本月读书<text class="user-count"> {{item.count}} </text>天</view>
   </view>
 </view>

@@ -36,7 +36,6 @@ Page({
     })
   },
   toDetail: function(event) {
-    console.log(event.target.dataset.bookdata);
     wx.navigateTo({
       url: '../bookDetail/bookDetail?data=' + JSON.stringify(event.target.dataset.bookdata)
     })

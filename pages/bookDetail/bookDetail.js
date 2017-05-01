@@ -8,14 +8,18 @@ Page({
     isCollection: null,
     review: null,
     reviewAlert: true,
-    reviewTip: null
+    reviewTip: null,
+    userReview: [],
   },
+
   //事件处理函数
   onLoad: function ({data}) {
     let that = this,
         bookData = JSON.parse(data);
     that.getData(bookData);
+    that.getReview();
   },
+
   getData: function(bookData) {
     let that = this;
     that.findStatus(bookData);
@@ -24,6 +28,7 @@ Page({
     });
     
   },
+
   findStatus: function(bookData) {
     let that = this;
     let userQuery = new Query('book_status');
@@ -40,19 +45,17 @@ Page({
         isReading: res[0].attributes.isReading,
         isCollection: res[0].attributes.isCollection
       });
-      console.log('查询图书收藏是否有数据 in findStatus', that.data.bookStatus);
     });
   },
+
   bookStatus: function(event) {
     let that = this;
-    console.log(that.data.bookStatus);
     //查询没有结果则创建一个对象
     if (!that.data.bookStatus) {
       
       // console.log(that.data.bookData);
       let UserObj = Object.extend('book_status');
       let userObj = new UserObj();
-
       userObj.set('userId', APP.globalData.userId);
       userObj.set(event.target.dataset.status, true);
       userObj.set('bookIsbn', that.data.bookData.isbn13);
@@ -85,36 +88,64 @@ Page({
       });
     }
   },
+  
   bindKeyInput: function(e) {
     const that = this;
     that.setData({
       review: e.detail.value
     })
   },
+
   submit: function() {
     const that = this;
     if (!that.data.review) {
       that.setData({
+        reviewTip: '书评不能为空哦！',
         reviewAlert: false,
-        reviewTip: '书评不能为空哦！'
       });
-      setTimeout(function(){
-        that.setData({reviewAlert: true});
-      }, 1500);
-      return;
-    }
-    var statusUpdata = Object.createWithoutData('book_status', that.data.bookStatus.id);
+    } else if (!that.data.isReading) {
+      that.setData({
+        reviewTip: '要读过此书才能评论哦！',
+        reviewAlert: false,
+      });
+    } else {
+      that.setData({reviewTip: '评论成功！'});
+      var statusUpdata = Object.createWithoutData('book_status', that.data.bookStatus.id);
       statusUpdata.set('review', that.data.review);
+      
       statusUpdata.save().then(function (res) {
-        console.log(res);
-        that.setData({
-          // bookStatus: res,
-          reviewTip: '评论成功！',
-          reviewAlert: false,
-        });
-        setTimeout(function(){
-          that.setData({reviewAlert: true});
-        }, 1500);
+        that.setData({reviewAlert: false,});
+        that.getReview();
       });
+    }
+    setTimeout(function(){
+      that.setData({reviewAlert: true});
+    }, 1500);
+  },
+
+  getReview: function() {
+    const that = this;
+    let userReview = [];
+    let reviewQuery = new Query('book_status');
+    reviewQuery.equalTo('bookId', that.data.bookData.id);
+    reviewQuery.descending('updatedAt');
+    reviewQuery.limit(10);
+    reviewQuery.include('userId');
+    reviewQuery.find().then(res => {
+      res.forEach(item => {
+        let userQuery = new Query('user');
+        userQuery.equalTo('objectId', item.attributes.userId);
+        userQuery.find().then(([{attributes}]) => {
+          item.attributes.nickName = attributes.nickName;
+          item.attributes.imageUrl = attributes.imageUrl;
+          userReview.push(item.attributes);
+          that.setData({userReview});
+        })
+      })
+    })
+  },
+
+  canreview: function() {
+
   }
 })

@@ -25,6 +25,15 @@
     <textarea class="book-review-writing" bindinput="bindKeyInput"></textarea>
     <view class="book-review-submit" bindtap="submit" >提交</view>
   </view>
+
+  <view class="review" wx:for="{{userReview}}" wx:key="{{item.bookId}}" hidden="{{!item.review}}">
+    <image class="user-img" src="{{item.imageUrl}}"></image>
+    <text class="user-name">{{item.nickName}}</text>
+    <view class="user-review">{{item.review}}</view>
+  </view>
 </view>
 
-<view hidden="{{reviewAlert}}" class="alert-review">书评不能为空哦！</view>
+
+
+<view hidden="{{reviewAlert}}" class="alert-review">{{reviewTip}}</view>
+

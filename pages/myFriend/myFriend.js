@@ -3,53 +3,72 @@ const {Query, Object} = require('../../libs/av-weapp-min.js');
 
 Page({
   data: {
-    userInfo: [],
-    followingInfo: []
+    userInfo: []
   },
+
   onLoad: function() {
     let that = this;
 
     that.getUserInfo();
   },
+
   getUserInfo: function() {
-    console.log('------')
     let that = this,
-        temp = [],
-        query = new Query('user');
+        userInfo = [],
+        myDate = new Date(),
+        year = myDate.getFullYear(),
+        month = myDate.getMonth() + 1,
+        uaerQuery = new Query('user');
+        
+    uaerQuery.equalTo('objectId', APP.globalData.userId);
+    uaerQuery.include('following');
 
-    query.equalTo('objectId', APP.globalData.userId);
-    query.include('user');
+    uaerQuery.find().then(([res]) => {
+      userInfo = {
+        id: res.id,
+        followingId: res.attributes.following,
+        imageUrl: res.attributes.imageUrl,
+        nickName: res.attributes.nickName,
+        following: [],
+      }
+      userInfo.followingId.map((followingId) => {
+        let follewQuery = new Query('user');
 
-    query.find().then(([res]) => {
-      console.log('res', res);
-      temp = res.attributes.following;
-      let following = temp.map(temp => {
-        console.log(temp);
-        let following = temp.get('user');
-        console.log('followingInfo', following);
-        let followingInfo = following.get('nickName');
+        follewQuery.equalTo('objectId', followingId);
+        follewQuery.find().then(([res]) => {
+          let count,
+              tempRes = res;
+          let calendarQuery = new Query('calendar');
+          calendarQuery.equalTo('userId', res.id);
+          calendarQuery.equalTo('year', year);
+          calendarQuery.equalTo('month', month);
+          calendarQuery.find().then(([res]) =>{
+            res ? count = res.attributes.day.length : count = 0;
+            userInfo.following.push({
+              id: tempRes.id,
+              imageUrl: tempRes.attributes.imageUrl,
+              nickName: tempRes.attributes.nickName,
+              count,
+            })
+          }).then(() => {
+            that.setData({userInfo});
+          })
+        })
       })
     })
   },
-  getFollowing:function() {
-    console.log('------')
+  
+  notFollow: function({target: {dataset}}) {
     let that = this,
-        followingInfo = [],
-        followingId = that.data.userInfo.following,
-        query = new Query('user');
-
-    followingId.map(followingId =>{
-      query.equalTo('objectId', followingId);
-      query.find().then(([res]) => {
-        let userInfo = {
-          id: res.id,
-          imageUrl: res.attributes.imageUrl,
-          nickName: res.attributes.nickName
-        }
-        followingInfo.push(userInfo)
-        that.setData({followingInfo});
-        console.log('jdif', followingInfo);
-      })
+        userInfo = [],
+        followUser = Object.createWithoutData('user', APP.globalData.userId);
+    followUser.remove('following', dataset.followingid);
+    followUser.save().then((res) => {
+      userInfo = that.data.userInfo;
+      [userInfo.following[dataset.index], userInfo.following[userInfo.following.length - 1]] = 
+        [userInfo.following[userInfo.following.length - 1], userInfo.following[dataset.index]];
+      userInfo.following.pop();
+      that.setData({userInfo});
     })
   }
 })

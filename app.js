@@ -21,6 +21,7 @@ App({
     wx.setStorageSync('logs', logs)
     that.getUserInfo();
   },
+
   getUserInfo: function(cb) {
     var that = this
     if(this.globalData.userInfo){
@@ -28,7 +29,7 @@ App({
     }else{
       //调用登录接口
       wx.login({
-        success: function () {
+        success: function (resule) {
           wx.getUserInfo({
             success: function (res) {
               that.globalData.userInfo = res.userInfo;
@@ -40,6 +41,7 @@ App({
       })
     }
   },
+
   signUser: function() {
     let that = this;
     let userQuery = new AV.Query('user');
@@ -54,17 +56,19 @@ App({
 
       userObj.set('nickName', that.globalData.userInfo.nickName);
       userObj.set('imageUrl', that.globalData.userInfo.avatarUrl);
-      userObj.save().then(function ({id}) {
+      userObj.save().then(({id}) => {
         that.globalData.userId = id;
-      }, function (err) {
+
+      }, err => {
         console.error(err);
       });
-    },function (err) {
+    },err => {
       
     })
   },
-  globalData:{
+
+  globalData: {
     userInfo: null,
     userId: null,
-  }
+  },
 })

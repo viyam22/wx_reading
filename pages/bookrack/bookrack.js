@@ -10,8 +10,10 @@ Page({
         selected: 'head-tag '
       }],
     bookList: null,
-    readBook: null,
-    collectionBook: null,
+    readBook: [],
+    readCount: '',
+    collectionBook: [],
+    collectionCount: '',
     hidden: false,
     hasRefesh: false,
     read: true,
@@ -49,7 +51,6 @@ Page({
           'content-type': 'application/json'
       },
       success: function({data}) {
-        console.log('根据isbn获得图书信息', data);
         wx.navigateTo({
           url: '../bookDetail/bookDetail?data=' + JSON.stringify(data)
         })
@@ -76,7 +77,9 @@ Page({
         this.setData({
           readBook,
           collectionBook,
-          bookList
+          bookList,
+          readCount: readBook.length,
+          collectionCount: collectionBook.length,
         });
         if(that.data.hasRefesh) {
           that.setData({hasRefesh: false})

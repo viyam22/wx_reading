@@ -18,10 +18,9 @@ page {
   width: 4rem;
   height: 5rem;
   float: left;
+  margin-right: 0.4rem;
 }
 .book-introduce {
-  float: left;
-  padding-left: 0.4rem;
   color: #8B8B8B;
   font-size: 12px;
   line-height: 1.2rem;

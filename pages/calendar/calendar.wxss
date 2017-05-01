@@ -73,3 +73,13 @@ page {
   margin-left: 50%;
   transform: translateX(-50%);
 }
+.record-tip {
+  background: #BEBEBF;
+  line-height: 22px;
+  color: #333;
+  border-radius: 4px;
+  width: 30%;
+  text-align: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
