@@ -1,13 +1,12 @@
 {
   "pages": [
     "pages/explore/explore",
-    "pages/bookSocial/bookSocial",
     "pages/myData/myData",
     "pages/addFriend/addFriend",
     "pages/myFriend/myFriend",
     "pages/calendar/calendar",
     
-    
+    "pages/bookSocial/bookSocial",
     "pages/searchResult/searchResult",
     "pages/review/review",
     "pages/bookrack/bookrack",
