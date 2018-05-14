@@ -1,45 +1,71 @@
 //index.js
 //获取应用实例
-var app = getApp()
+var APP = getApp()
 Page({
   data: {
-    userStatic:[
-        {
-            name: "阅读圈",
-            url: "",
-            icon: "/static/quan.png"
-        },{
-            name: "打卡",
-            url: "",
-            icon: "/static/calendar.png"
-        },{
-            name: "我的书评",
-            url: "",
-            icon: "/static/comment.png"
-        },{
-            name: "收藏",
-            url: "",
-            icon: "/static/remark.png"
-        }
-    ],
-    userInfo: {}
+    searchValue: '',
+    bookTypeData: [{
+      type: '科幻',
+      bookData: ''
+    },{
+      type: '计算机',
+      bookData: ''
+    },{
+      type: '美术',
+      bookData: ''
+    },{
+      type: '文学',
+      bookData: ''
+    }]
   },
   //事件处理函数
-  bindViewTap: function() {
+  onLoad: function() {
+    var that = this;
+    for(let i = 0, len = that.data.bookTypeData.length; i < len; i++){
+      wx.request({
+        url: APP.DB_URL + '/v2/book/search',
+        data: {
+          q: '',
+           tag: that.data.bookTypeData[i].type,
+           start: '',
+           count: 7
+        },
+        header: {
+            'content-type': 'application/json'
+        },
+        success: function(res) {
+          that.data.bookTypeData[i].bookData = res.data.books;
+          that.setData({
+            bookTypeData: that.data.bookTypeData
+          });
+        }
+      })
+    }
+  },
+  toMore: function(event) {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../more/more?type=' + event.target.dataset.type
     })
   },
-  onLoad: function () {
-    console.log('onLoad')
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
-      })
-      console.log(userInfo);
+  toDetail: function(event) {
+    wx.navigateTo({
+      url: '../bookDetail/bookDetail?data=' + JSON.stringify(event.target.dataset.bookdata)
+    })
+  },
+  search: function() {
+    var data= {
+         q: this.data.searchValue,
+         tag: '',
+         start: '',
+         count: 10
+      };
+    wx.navigateTo({
+      url: '../searchResult/searchResult?searchData=' + JSON.stringify(data)
+    })
+  },
+  bindKeyInput: function(e) {
+    this.setData({
+      searchValue: e.detail.value
     })
   }
 })

@@ -1,0 +1,12 @@
+<!-- 我的书评页面 -->
+<view class="count">{{reviewCount}}本</view>
+<view class="book-box" wx:for="{{reviewList}}" wx:key="{{item.bookId}}">
+  <image class="book-img" src="{{item.image}}" mode="aspectFit"></image>
+  <view class="book-introduce" bindtap="toDetail">
+    <view class="book-name">{{item.title}}</view>
+    <view>作者：{{item.author}}</view>
+    <view>{{item.review}}</view>
+  </view>
+</view>
+
+

@@ -1,59 +1,17 @@
 <!-- 发现页面 -->
-<input class="search" placeholder="搜索" placeholder-style="color: #B6B6B6"></input>
-<view class="container">
-  <view class="title">
-    <view class="type">科幻类</view>
-    <view class="more">更多 ></view>
-  </view>
-  <view class="scroll-box">
-    <view class="box">
-      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
-      <view class="book-name">三体</view>
-    </view>
-    <view class="box">
-      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
-      <view class="book-name">三体</view>
-    </view>
-    <view class="box">
-      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
-      <view class="book-name">三体</view>
-    </view>
-    <view class="box">
-      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
-      <view class="book-name">三体</view>
-    </view>
-    <view class="box">
-      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
-      <view class="book-name">三体</view>
-    </view>
-  </view>
+<view class="search-box">
+  <input class="search" placeholder="搜索关键字" placeholder-style="color: #B6B6B6" bindinput="bindKeyInput"></input>
+  <view class="search-btn" bindtap="search">搜索</view>
 </view>
-
-<view class="container">
+<view class="container" wx:for="{{bookTypeData}}" wx:key="type.type" wx:for-item="type">
   <view class="title">
-    <view class="type">科幻类</view>
-    <view class="more">更多 ></view>
+    <view class="type">{{type.type}}</view>
+    <view class="more" bindtap="toMore" data-type="{{type.type}}">更多 ></view>
   </view>
   <view class="scroll-box">
-    <view class="box">
-      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
-      <view class="book-name">三体</view>
-    </view>
-    <view class="box">
-      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
-      <view class="book-name">三体</view>
-    </view>
-    <view class="box">
-      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
-      <view class="book-name">三体</view>
-    </view>
-    <view class="box">
-      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
-      <view class="book-name">三体</view>
-    </view>
-    <view class="box">
-      <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
-      <view class="book-name">三体</view>
+    <view class="box" wx:for="{{type.bookData}}" wx:for-item="item" wx:key="item.id">
+      <image class="book-img" src="{{item.image}}" mode="aspectFit"  bindtap="toDetail" data-bookdata="{{item}}"></image>
+      <view class="book-name">{{item.title}}</view>
     </view>
   </view>
 </view>

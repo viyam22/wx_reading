@@ -1,0 +1,114 @@
+.book-cover {
+  height: 15rem;
+  width: 100%;
+  background: #F0F0F0;
+  position: relative;
+}
+.book-img {
+  height: 14rem;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+.container {
+  padding: 0.8rem;
+}
+.book-name {
+  font-weight: bold;
+  line-height: 28px;
+}
+.book-info{
+  color: #8B8B8B;
+  font-size: 12px;
+  line-height: 18px;
+}
+.book-box {
+  overflow: hidden;
+}
+.book-status {
+  border: 1px solid #1689EF;
+  color: #1689EF;
+  border-radius: 0.2rem;
+  width: 3rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  font-size:14px;
+  text-align:center;
+  margin: 0.8rem 0.4rem 0 0;
+  float: left;
+}
+.book-status-selected {
+  border: 1px solid #1689EF;
+  color: #FFF;
+  background-color: #1689EF;
+  border-radius: 0.2rem;
+  width: 3rem;
+  height: 1.6rem;
+  line-height: 1.6rem;
+  font-size:14px;
+  text-align:center;
+  margin: 0.8rem 0.4rem 0 0;
+  float: left;
+}
+.book-detail {
+  margin-top: 0.8rem;
+}
+.book-detail-title {
+  color: #8B8B8B;
+  font-size: 12px;
+  line-height: 28px;
+}
+.book-detail-content {
+  font-size: 12px;
+  line-height: 18px;
+}
+.book-review {
+  margin-top: 0.8rem;
+}
+.book-review-title {
+  color: #1689EF;
+  font-size: 12px;
+  line-height: 28px;
+}
+.book-review-writing {
+  border: 1px solid #F3F3F3;
+}
+.book-review-submit {
+  color: #FFF;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 3px;
+  margin-top: 0.8rem;
+  width: 4rem;
+  background: #1689EF;
+  text-align: center;
+}
+.alert-review {
+  width: 50%;
+  line-height:28px;
+  font-size: 14px;
+  transform: translateX(50%);
+  background: #1689EF; 
+  color: #FFF;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  border-radius: 4px;
+}
+.review {
+  font-size: 14px;
+  margin-top: 1.5rem;
+}
+.user-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  margin-right: 0.2rem;
+  transform: translateY(-50%)；
+}
+.user-name {
+  line-height: 1.5rem;
+}
+.user-review {
+  margin-top: 0.4rem;
+}

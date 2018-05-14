@@ -1,0 +1,39 @@
+page {
+  background-color: #f4f5f7;
+  font-size: 14px;
+}
+.user {
+  background: #FFF;
+  border: 1px solid #F3F3F3;
+  overflow: hidden;
+  padding: 0.4rem;
+  margin: 0.4rem;
+  border-radius: 0.4rem;
+  line-height: 22px;
+}
+.user-image {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  float: left;
+}
+.user-info {
+  float: left;
+  margin-left: 0.4rem;
+  width: 80%;
+}
+.user-count {
+  color: #1689EF;
+  font-weight: bold;
+}
+.user-btn {
+  float: right;
+  padding: 0 0.6rem;
+  background: #1689EF;
+  border-radius: 0.4rem;
+  font-size: 12px;
+  color: #FFF;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align:center;
+}

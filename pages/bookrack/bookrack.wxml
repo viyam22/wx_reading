@@ -1,25 +1,44 @@
 <!-- 书架的页面 -->
 <view class="head">
-  <view class="head-tag">在读</view>
-  <view class="head-tag">收藏</view>
-</view>
-<view class="count">1本</view>
-<view class="book-box">
-  <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
-  <view class="book-introduce">
-    <view class="book-name">张爱玲文集</view>
-    <view>作者：张爱玲</view>
-    <view>出版社：安徽文艺出版社</view>
-  </view>
+  <view wx:for="{{tagData}}" wx:key="tagName" class="head-tag {{item.selected}}" bindtap="selectTag" data-index="{{index}}">{{item.name}}</view>
 </view>
 
-<view class="book-box">
-  <image class="book-img" src="../../static/demo.jpg" mode="aspectFit"></image>
-  <view class="book-introduce">
-    <view class="book-name">张爱玲文集</view>
-    <view>作者：张爱玲</view>
-    <view>出版社：安徽文艺出版社</view>
+<!--<loading hidden="{{isLoading}}" bindchange="loadingChange">加载中...</loading>-->
+
+<scroll-view scroll-y="true" bindscrolltolower="loadMore" bindscrolltoupper="refesh">
+  <view wx:if="{{hasRefesh}}" class="refesh">
+    <icon type="waiting" size="40" color="rgb(22, 173, 239)"></icon><text>刷新中...</text>
   </view>
-</view>
+
+  <view class="count" hidden="{{!read}}">{{readCount}}本</view>
+  <view class="count" hidden="{{!collection}}">{{collectionCount}}本</view>
+  
+  <view class="book-box" wx:for="{{readBook}}" wx:key="item.bookId" wx:for-item="item" hidden="{{!read}}">
+    <view class="temp">
+      <!--dataset问题未解决-->
+      <image class="book-img" src="{{item.image}}" mode="aspectFit" bindtap="toDetail" data-isbn="{{item.bookIsbn}}"></image>
+      <view class="book-introduce">
+        <view class="book-name">{{item.title}}</view>
+        <view>作者：{{item.author}}</view>
+        <view>出版社：{{item.publisher}}</view>
+        <view>价格：{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="book-box" wx:for="{{collectionBook}}" wx:key="item.bookId" wx:for-item="item" hidden="{{!collection}}">
+    <view class="temp">
+      <!--dataset问题未解决-->
+      <image class="book-img" src="{{item.image}}" mode="aspectFit" bindtap="toDetail" data-isbn="{{item.bookIsbn}}"></image>
+      <view class="book-introduce">
+        <view class="book-name">{{item.title}}</view>
+        <view>作者：{{item.author}}</view>
+        <view>出版社：{{item.publisher}}</view>
+        <view>价格：{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
 
 

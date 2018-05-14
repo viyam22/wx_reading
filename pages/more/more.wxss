@@ -38,16 +38,21 @@
   display: inline-block;
   width: 33.33%;
   padding-bottom: 0.6rem;
+  padding-bottom: 3.5rem;
 }
 .book-img {
   width: 5rem;
   height: 7rem;
   margin: 0 auto;
   display: block;
+  position: relative;
 }
 .book-name {
   font-size: 12px;
   font-weight: bold;
   padding-left: 0.8rem;
-  line-height: 22px;
+  line-height: 18px;
+  position: absolute;
+  white-space:normal;
+  width: 5rem;
 }

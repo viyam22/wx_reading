@@ -1,0 +1,39 @@
+<!-- 图书详情页面 -->
+<view class="book-cover">
+  <image class="book-img" src="{{bookData.image}}" mode="aspectFit"></image>
+</view>
+<view class="container">
+  <view class="book-name">{{bookData.title}}</view>
+  <view class="book-info">作者：{{bookData.author}}</view>
+  <view class="book-info">出版社：{{bookData.publisher}}</view>
+  <view class="book-info">出版时间：{{bookData.pubdate}}</view>
+
+  <view class="book-box">
+    <view class="book-status" bindtap="bookStatus" data-status="isReading" wx:if="{{isReading != true}}">在读</view>
+    <view class="book-status-selected" bindtap="bookStatus" data-status="isReading" wx:if="{{isReading == true}}">在读</view>
+    <view class="book-status" bindtap="bookStatus" data-status="isCollection" wx:if="{{isCollection != true}}">收藏</view>
+    <view class="book-status-selected" bindtap="bookStatus" data-status="isCollection" wx:if="{{isCollection == true}}">收藏</view>
+  </view>
+
+  <view class="book-detail">
+    <view class="book-detail-title">简介</view>
+    <view class="book-detail-content">{{bookData.summary}}</view>
+  </view>
+
+  <view class="book-review">
+    <text class="book-review-title">写书评</text>
+    <textarea class="book-review-writing" bindinput="bindKeyInput"></textarea>
+    <view class="book-review-submit" bindtap="submit" >提交</view>
+  </view>
+
+  <view class="review" wx:for="{{userReview}}" wx:key="{{item.bookId}}" hidden="{{!item.review}}">
+    <image class="user-img" src="{{item.imageUrl}}"></image>
+    <text class="user-name">{{item.nickName}}</text>
+    <view class="user-review">{{item.review}}</view>
+  </view>
+</view>
+
+
+
+<view hidden="{{reviewAlert}}" class="alert-review">{{reviewTip}}</view>
+

@@ -13,10 +13,11 @@ page {
   position: relative;
   float: left;
   line-height: 2rem;
+  color: #8B8B8B;
 }
 .head-tag::before {
   content: "";
-  border-right: 1px solid #B6B6B6;
+  border-right: 1px solid #F2F2F2;
   height: 1rem;
   position: absolute;
   right: 0;
@@ -26,9 +27,13 @@ page {
 .head-tag:last-child::before {
   border:none;
 }
-.head-tag::after {
+.selected {
+  color: #000;
+  font-weight: bold;
+}
+.selected::after {
   content: "";
-  border-bottom: 3px solid #F2F2F2;
+  border-bottom: 3px solid #1689EF;
   width: 2rem;
   position: absolute;
   bottom: 0;
@@ -47,14 +52,16 @@ page {
   overflow: hidden;
   border-bottom: 1px solid #F2F2F2;
 }
+.temp {
+  overflow: hidden;
+}
 .book-img {
   width: 4rem;
   height: 5rem;
   float: left;
+  margin-right: 0.4rem;
 }
 .book-introduce {
-  float: left;
-  padding-left: 0.4rem;
   color: #8B8B8B;
   font-size: 12px;
   line-height: 1.2rem;
@@ -63,4 +70,11 @@ page {
   font-size: 14px;
   color: #000;
   font-weight: bold;
+}
+.refesh {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-items: center;
+  justify-content: center;
 }

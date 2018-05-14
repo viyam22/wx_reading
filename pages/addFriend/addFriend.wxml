@@ -1,0 +1,17 @@
+<view class="search-box">
+  <input class="search" placeholder="搜索好友名字" placeholder-style="color: #B6B6B6" bindinput="bindKeyInput"></input>
+  <view class="search-btn" bindtap="searchUser">搜索</view>
+</view>
+
+<view class="user" wx:for="{{searchUser}}" wx:key="{{item.id}}" wx:for-item="item" hidden="{{userList.length === 0}}">
+  <image class="user-image" src="{{item.imageUrl}}"></image>
+  <view class="user-info">
+    <text>{{item.nickName}}</text>
+    <view class="user-btn" bindtap="follow" data-id="{{item.id}}" data-index="{{index}}" hidden="{{item.isFollow}}">关注</view>
+    <view class="user-btn-following" hidden="{{!item.isFollow}}">已关注</view>
+  </view>
+</view>
+
+<view class="none-user" wx:if="{{searchUser.length === 0 && isTip}}">
+  无结果，换个关键词搜搜!
+</view>

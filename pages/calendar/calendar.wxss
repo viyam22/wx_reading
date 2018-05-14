@@ -1,0 +1,85 @@
+page {
+  font-size: 14px;
+}
+.head {
+  text-align: center;
+}
+.head-title {
+  color: #333;
+  display: inline;
+}
+.head-count {
+  display: inline;
+  color: #1689EF;
+  font-size: 36px;
+  font-weight: bold;
+}
+.date {
+  line-height: 36px;
+  text-align: center;
+}
+.week-box {
+}
+.week {
+  width: 14.28%;
+  color: #646462;
+  text-align:center;
+  line-height: 32px;
+  display: inline-block;
+}
+.day-box {
+  color: #BDBDB6;
+}
+.day {
+  width: 14.28%;
+  text-align:center;
+  line-height: 28px;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+.day-record {
+  background: #1689EF;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -99;
+}
+.footer {
+  margin-top: 8px;
+  height: 22px;
+  line-height: 22px;
+  padding: 16px 12px;
+}
+.footer-logo {
+  background: #1689EF;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 12px;
+}
+.record-btn {
+  background: #1689EF;
+  line-height: 22px;
+  color: #FFF;
+  border-radius: 4px;
+  width: 15%;
+  text-align: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.record-tip {
+  background: #BEBEBF;
+  line-height: 22px;
+  color: #333;
+  border-radius: 4px;
+  width: 30%;
+  text-align: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}

@@ -1,0 +1,45 @@
+<view class="head"><view class="head-title">本月已打卡<view class="head-count"> {{count}} </view>天</view></view>
+<view class="date">{{date.year}}年{{date.month}}月{{date.day}}日</view>
+<view class="record-btn" bindtap="record" hidden="{{hasRecord}}">打卡</view>
+<view class="record-tip" hidden="{{!hasRecord}}">今天已打卡</view>
+<view class="week-box">
+    <view class="week" wx:for="{{week}}" wx:key="item">{{item}}</view>
+</view>
+<view class="day-box">
+    <view class="day" wx:for="{{calendar}}" wx:key="id"><view class="day-record" hidden="{{!item.isRecord}}"></view>{{item.date}}</view>
+
+
+
+    <!--<view class="day">2</view>
+    <view class="day">3</view>
+    <view class="day">4</view>
+    <view class="day">5</view>
+    <view class="day">6</view>
+    <view class="day">7</view>
+    <view class="day"><view class="day-record"></view>8</view>
+    <view class="day">9</view>
+    <view class="day">10</view>
+    <view class="day">11</view>
+    <view class="day">12</view>
+    <view class="day">13</view>
+    <view class="day">14</view>
+    <view class="day">15</view>
+    <view class="day"><view class="day-record"></view>16</view>
+    <view class="day">17</view>
+    <view class="day"><view class="day-record"></view>18</view>
+    <view class="day"><view class="day-record"></view>19</view>
+    <view class="day">20</view>
+    <view class="day">21</view>
+    <view class="day"><view class="day-record"></view>22</view>
+    <view class="day">23</view>
+    <view class="day">24</view>
+    <view class="day">25</view>
+    <view class="day">26</view>
+    <view class="day">27</view>
+    <view class="day">28</view>
+    <view class="day">29</view>
+    <view class="day">30</view>-->
+</view>
+<view class="footer">
+  <view><view class="footer-logo"></view>已打卡</view>
+</view>
